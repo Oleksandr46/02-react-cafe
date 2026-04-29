@@ -39,7 +39,7 @@ export default function App() {
       {totalVotes === 0 ? (
         <Notification message="No feedback given" />
       ) : (
-        <VoteStats {...votes} totalVotes={totalVotes} positiveRate={positiveRate}/>
+        <VoteStats votes={votes} totalVotes={totalVotes} positiveRate={positiveRate} />
       )}
     </div>
   );
