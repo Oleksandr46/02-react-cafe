@@ -1,5 +1,5 @@
-import styles from './VoteStatus.module.css';
-interface VoteStatusProps {
+import styles from './VoteStats.module.css';
+interface VoteStatsProps {
     good: number;
     neutral: number;
     bad: number;
@@ -7,7 +7,7 @@ interface VoteStatusProps {
     positiveRate: number;
 }
 
-export default function VoteStatus({ good, neutral, bad, totalVotes, positiveRate }: VoteStatusProps) {
+export default function VoteStats({ good, neutral, bad, totalVotes, positiveRate }: VoteStatsProps) {
 //   const totalVotes = good + neutral + bad;
 
   return (
