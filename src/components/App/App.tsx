@@ -3,7 +3,7 @@ import css from "./App.module.css"
 import CafeInfo from "../CafeInfo/CafeInfo";
 import type{ Votes, VoteType } from "../../types/votes";
 import VoteOptions from "../VoteOptions/VoteOptions"
-import VoteStatus from "../VoteStats/VoteStats";
+import VoteStats from "../VoteStats/VoteStats";
 import Notification from "../Notification/Notification";
 
 export default function App() {
@@ -11,6 +11,8 @@ export default function App() {
         good: 0,
         neutral: 0,
       bad: 0,
+      totalVotes: 0,
+    positiveRate: 0
     });
     
     const handleVote = (type: VoteType) => {
@@ -21,7 +23,10 @@ export default function App() {
           good: 0,
         neutral: 0,
           bad: 0,
-      })
+      totalVotes: 0,
+    positiveRate: 0
+        });
+      
     };
   const totalVotes = votes.good + votes.neutral + votes.bad;
   const positiveRate = totalVotes ? Math.round((votes.good / totalVotes) * 100) : 0;
@@ -36,7 +41,7 @@ export default function App() {
       {totalVotes === 0 ? (
         <Notification message="No feedback given" />
       ) : (
-        <VoteStatus good={votes.good} neutral={votes.neutral} bad={votes.bad} totalVotes={totalVotes} positiveRate={positiveRate} />
+        <VoteStats {...votes} totalVotes={totalVotes} positiveRate={positiveRate}/>
       )}
     </div>
   );
