@@ -11,8 +11,7 @@ export default function App() {
         good: 0,
         neutral: 0,
       bad: 0,
-      totalVotes: 0,
-    positiveRate: 0
+      
     });
     
     const handleVote = (type: VoteType) => {
@@ -23,8 +22,7 @@ export default function App() {
           good: 0,
         neutral: 0,
           bad: 0,
-      totalVotes: 0,
-    positiveRate: 0
+      
         });
       
     };
